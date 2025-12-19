@@ -1,10 +1,7 @@
 <?php
-$host = "localhost";
-$user = "root";
-$password = '';
-$db_name = "barcelonaexer3";
-$con = mysqli_connect($host, $user, $password, $db_name);
-if(mysqli_connect_errno()) {
-die("Failed to connect with MySQL: ". mysqli_connect_error());
+$connect = new mysqli("localhost", "root", "", "inventory_db");
+
+if ($connect->connect_error) {
+    die("Connection failed: " . $connect->connect_error);
 }
 ?>
